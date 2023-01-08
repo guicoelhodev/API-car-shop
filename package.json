@@ -20,6 +20,6 @@
   "scripts": {
     "build": "rimraf ./build && tsc",
     "start": "node ./dist/src/app.js",
-    "dev": "nodemon"
+    "dev": "nodemon --inspect"
   }
 }
