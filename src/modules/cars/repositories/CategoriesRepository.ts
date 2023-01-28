@@ -5,11 +5,19 @@ import {
 } from "./ICategoriesRepository";
 
 class CategoriesRepository implements ICategoriesRepository {
-  constructor() {
+  private categories: Category[];
+  private static INSTANCE: CategoriesRepository;
+
+  private constructor() {
     this.categories = [];
   }
 
-  private categories: Category[];
+  public static getInstance(): CategoriesRepository {
+    if (!CategoriesRepository.INSTANCE) {
+      CategoriesRepository.INSTANCE = new CategoriesRepository();
+    }
+    return CategoriesRepository.INSTANCE;
+  }
 
   createCategory({ name, description }: ICreateCategoryDTO) {
     const category = new Category();
@@ -24,7 +32,6 @@ class CategoriesRepository implements ICategoriesRepository {
   }
 
   list(): Category[] {
-    console.log(this.categories);
     return this.categories;
   }
 
