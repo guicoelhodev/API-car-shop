@@ -1,10 +1,10 @@
 import express, { Request, Response } from "express";
-import { CategoriesRepository } from "../repositories/CategoriesRepository";
+import { CategoriesRepository } from "../modules/cars/repositories/CategoriesRepository";
 
 // services
 
-import { CreateCategoryService } from "../services/CreateCategoryService";
-import { ListCategoryService } from "../services/ListCategoryService";
+import { CreateCategoryService } from "../modules/cars/services/CreateCategoryService";
+import { ListCategoryService } from "../modules/cars/services/ListCategoryService";
 
 const categoriesRoutes = express.Router();
 
