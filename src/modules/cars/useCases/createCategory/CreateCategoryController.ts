@@ -7,8 +7,8 @@ class CreateCategoryController {
   handle(request: Request, response: Response): Response {
     const { name, description } = request.body;
 
-    const createCategoryService = this.createCategoryUseCase;
-    createCategoryService.execute({ name, description });
+    const createCategoryUseCase = this.createCategoryUseCase;
+    createCategoryUseCase.execute({ name, description });
 
     return response.status(201).json({ message: "category has been created" });
   }
